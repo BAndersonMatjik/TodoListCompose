@@ -63,10 +63,10 @@ fun TodoDetailScreen(navController: NavController) {
 
 }
 
-@Preview(showBackground = true, device = Devices.PIXEL_2)
-@Composable
-fun TodoDetailPreview() {
-    TodoListComposeTheme {
-        TodoDetailScreen()
-    }
-}
+//@Preview(showBackground = true, device = Devices.PIXEL_2)
+//@Composable
+//fun TodoDetailPreview() {
+//    TodoListComposeTheme {
+//        TodoDetailScreen()
+//    }
+//}
