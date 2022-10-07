@@ -16,7 +16,7 @@ fun BaseNavigationScreen(){
         composable(Screen.Home.route){
             HomeScreen(navController)
         }
-        composable(Screen.Home.route){
+        composable(Screen.Detail.route){
             TodoDetailScreen(navController)
         }
     }
