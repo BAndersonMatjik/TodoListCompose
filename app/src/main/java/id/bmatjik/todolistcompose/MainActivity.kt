@@ -22,7 +22,9 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import id.bmatjik.todolistcompose.domain.model.Todo
+import id.bmatjik.todolistcompose.ui.navigation.BaseNavigationScreen
 import id.bmatjik.todolistcompose.ui.theme.TodoListComposeTheme
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
@@ -37,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomeScreen()
+                    BaseNavigationScreen()
                 }
             }
         }
@@ -45,9 +47,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     var isMadeByTextVisible by remember { mutableStateOf(false) }
-    Column(modifier = Modifier.fillMaxSize().padding(horizontal = 6.dp)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .padding(horizontal = 6.dp)) {
 
         Text(text = "Todo", style = MaterialTheme.typography.headlineMedium, fontSize = 30.sp, modifier = Modifier.clickable {
             isMadeByTextVisible = !isMadeByTextVisible
@@ -81,7 +85,6 @@ fun TodoItem(todo: Todo){
 @Composable
 fun DefaultPreview() {
     TodoListComposeTheme {
-        HomeScreen()
     }
 }
 
